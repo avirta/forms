@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+ <link rel="stylesheet" media="screen,projection,tv" href="//support.cdn.mozilla.net/static/css/common-min.css?build=f7d846f" />
+<title>Форма</title>
+</head>
+<body bgcolor="">
+<script type="text/javascript">
+function poschitat()
+{
+var marka_tovara=-1;
+var city=-1;
+if (document.forms[0].marka[0].checked==true){
+marka_tovara=0;}
+if (document.forms[0].marka[1].checked==true){
+marka_tovara=1;}
+if (document.forms[0].marka[2].checked==true){
+marka_tovara=2;}
+if (document.forms[0].marka[3].checked==true){
+marka_tovara=3;}
+if (document.forms[0].Region[0].checked==true){
+marka_tovara=0;}
+//alert(marka_tovara);
+city=document.forms[0].Region.value;
+alert(city);
+}
+</script>
+<p>
+<form method="GET" action="login.php" enctype="multipart/form-data" name="login">
+<BR><B><Big>Registration</Big></B></BR>
+<input type="text" name="login" size="20"maxlength="30"><B>Login</B><BR>
+<input type="password" name="password"><B>Password</B><BR>
+<br><input type="checkbox"><B>Замовити</B>
+<br>
+<br>
+<br>
+<font size="14" color="green"
+<MARQUEE>Що ви бажаєте придбати???</MARQUEE></font>
+<br>
+<input type="radio" name="marka" value="Ноутбук">Ноутбук<Br> 
+<input type="radio" name="marka" value="Материнська плата">Материнська плата<Br>
+<input type="radio" name="marka" value="Колонки">Колонки<Br>
+<input type="radio" name="marka" value="Планшет">Планшет<Br>
+</p>
+<CENTER><select name="Region" multiple size="7">Оберіть місто <Br></CENTER>
+
+<option value="1" selected>Київ</option>
+<option value="2" selected>Донецьк</option>
+<option value="3" selected>Львів</option>
+<option value="4" selected>Чернігів</option>
+<option value="5" selected>Одеса</option>
+<option value="6" selected>Харків</option></select>
+<br><br><input type="button" value="порахувати" onclick="poschitat()">
+<br><br><input type="button" value="вартість доставки" onclick="poschitat()">
+<br><br><input type="button" value="замовити">
+
+</form>
+</body>
+</html>
